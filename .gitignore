@@ -1,0 +1,8 @@
+*.lst
+*.html
+*.BIN
+*.k7
+tools/k7mofs
+tools/c6809
+tools/c6809-v1.0/
+tools/*.exe
