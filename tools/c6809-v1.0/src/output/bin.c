@@ -41,7 +41,7 @@ enum {
 
 /* Ecriture */
 static long  wbin_fpos = 0;
-static int   wbin_addr = 0x0000;
+static int   wbin_addr = -1;
 static int   wbin_type = BIN_TYPE_DATA;
 static int   wbin_size = 0;
 static int   wbin_err = 0;
@@ -191,6 +191,7 @@ static void write_char (int i, int size)
             write_close_hunk ();
             if ((wbin_err == 0)
              && (wbin_file != NULL)
+             && (wbin_addr != -1)
              && ((wbin_type == BIN_TYPE_DATA)
               || (wbin_type == BIN_TYPE_LINEAR)))
             {

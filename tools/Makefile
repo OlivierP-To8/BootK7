@@ -2,7 +2,7 @@ all: k7mofs c6809
 
 clean:
 	make -C c6809-v1.0 clean
-	-rm k7mofs
+	-rm k7mofs c6809
 
 k7mofs: k7mofs.c
 	gcc -o $@ $@.c
