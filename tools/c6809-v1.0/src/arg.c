@@ -122,7 +122,7 @@ static void create_arg (char *str, int style)
     else
     {
         arg.list = arg_list_old;
-        (void)error_Memory ();
+        (void)error_Memory (__FILE__, __LINE__, __func__);
     }
 
     arg.column += arg.size;
@@ -291,7 +291,7 @@ char /*@null@*/*arg_StrAlloc (char *str)
     }
     else
     {
-        (void)error_Memory ();
+        (void)error_Memory (__FILE__, __LINE__, __func__);
     }
 
     return string;

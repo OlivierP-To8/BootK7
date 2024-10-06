@@ -41,7 +41,7 @@ extern int   error_BadDp (void);
 extern int   error_MissingInformation (void);
 extern int   error_OperandOutOfRange (void);
 extern int   error_MissingOperand (void);
-extern int   error_Memory (void);
+extern int   error_Memory (char *file, int line, const char *func);
 extern int   error_Internal (char *file, int line, const char *func);
 extern int   error_ErrnoFOpen (char *name);
 

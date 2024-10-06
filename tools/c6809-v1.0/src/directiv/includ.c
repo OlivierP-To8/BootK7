@@ -272,7 +272,7 @@ static void add_include (struct SOURCE_LIST /*@dependent@*/*source)
     else
     {
         include_list = include_list_old;
-        (void)error_Memory ();
+        (void)error_Memory (__FILE__, __LINE__, __func__);
     }
 }
 

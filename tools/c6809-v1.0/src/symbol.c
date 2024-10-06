@@ -101,7 +101,7 @@ static struct SYMBOL_PRM /*@null@*/*create_symbol_prm (char *name)
     else
     {
         prm = NULL;
-        (void)error_Memory ();
+        (void)error_Memory (__FILE__, __LINE__, __func__);
     }
 
     return prm;
@@ -125,7 +125,7 @@ static void add_symbol (char *name)
     else
     {
         symbol_list = symbol;
-        (void)error_Memory ();
+        (void)error_Memory (__FILE__, __LINE__, __func__);
     }
 }
 

@@ -472,7 +472,7 @@ static void create_source_entry (int type, char *pc, int line)
     else
     {
         source_list = source_list_old;
-        (void)error_Memory ();
+        (void)error_Memory (__FILE__, __LINE__, __func__);
     }
 }
     
@@ -536,7 +536,7 @@ static void create_text_entry (char *str)
         }
         else
         {
-            (void)error_Memory ();
+            (void)error_Memory (__FILE__, __LINE__, __func__);
         }
     }
     else

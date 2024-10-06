@@ -203,7 +203,7 @@ static int push_eval (int sign, int precedence, int value)
     else
     {
         eval_list = eval_list_old;
-        err = error_Memory();
+        err = error_Memory (__FILE__, __LINE__, __func__);
     }
     return err;
 }
@@ -549,7 +549,6 @@ static int read_operator (void)
     int i;
     int size;
     char *p;
-    char *peval0;
 
     if (is_eval_end (*peval) != 0)
     {
@@ -568,11 +567,9 @@ static int read_operator (void)
 
             eval_operator = OPER_PLUS;
             eval_precedence = 1;
-            peval0 = peval;
             (void)arg_ReadSized (&peval, size, ARG_STYLE_NONE);
             err = error_Error ((is_fr)?"{+}opérateur inconnu"
-                                      :"{+}unknown operator",
-                                       arg_FilteredChar(*peval0));
+                                      :"{+}unknown operator");
         }
         else
         if ((eval_sign == OPER_DIV)

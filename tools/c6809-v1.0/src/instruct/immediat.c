@@ -51,15 +51,13 @@ void immediat_Assemble (void)
             if ((value < -256) || (value > 255))
             {
                 err = error_Error ((is_fr)?"{o}valeur 8 bits attendue"
-                                          :"{o}8 bits value expected",
-                                           (int)value & 0xffff);
+                                          :"{o}8 bits value expected");
             }
         }
         else
         {
             err = error_Error ((is_fr)?"{+}préfixe '#' attendu"
-                                      :"{+}prefix '#' expected",
-                                       arg_FilteredChar (*arg.str));
+                                      :"{+}prefix '#' expected");
         }
     }
     else

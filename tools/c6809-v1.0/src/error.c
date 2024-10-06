@@ -93,7 +93,7 @@ static void add_error (void)
     else
     {
         error_list = error_old;
-        (void)error_Memory ();
+        (void)error_Memory (__FILE__, __LINE__, __func__);
     }
 }
 
@@ -265,7 +265,7 @@ static void set_known (char *in, char *out)
 
 
 /* set_text:
- *  Définit un texte défini.
+ *  Définit un texte spécial.
  */
 
 static char *set_text (char /*@returned@*/*in, char *out)
@@ -506,10 +506,11 @@ int error_Fatal (const char *format, ...)
 /* error_Memory:
  *  Erreur fatale pour mémoire insuffisante.
  */
-int error_Memory (void)
+int error_Memory (char *file, int line, const char *func)
 {
-    return error_Fatal ((is_fr) ? "{-}mémoire insuffisante"
-                                : "{-}not enough memory");
+    return error_Fatal ((is_fr) ? "%s:%d:%s(): mémoire insuffisante"
+                                : "%s:%d:%s(): not enough memory",
+                                file, line, func);
 }
 
 

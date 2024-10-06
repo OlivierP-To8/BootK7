@@ -111,7 +111,7 @@ static void add_macro (int quiet)
     else
     {
         macro_list = macro_list_old;
-        (void)error_Memory();
+        (void)error_Memory (__FILE__, __LINE__, __func__);
     }
 }
 
@@ -175,7 +175,7 @@ static void add_macro_call_arg (
         else
         {
             list->arg = list_old;
-            (void)error_Memory();
+            (void)error_Memory (__FILE__, __LINE__, __func__);
         }
     }
 }
@@ -239,7 +239,7 @@ static void add_macro_call (char *name)
     else
     {
         macrocall_list = macrocall_list_old;
-        (void)error_Memory ();
+        (void)error_Memory (__FILE__, __LINE__, __func__);
     }
 }
 

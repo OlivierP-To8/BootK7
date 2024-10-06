@@ -77,7 +77,7 @@ static void open_list (void)
         fcx_list_buf = malloc (FCX_BUF_SIZE_MAX);
         if (fcx_list_buf == NULL)
         {
-            (void)error_Memory ();
+            (void)error_Memory (__FILE__, __LINE__, __func__);
         }
         else
         {
@@ -89,7 +89,7 @@ static void open_list (void)
     else
     {
         fcx_list = fcx_list_old;
-        (void)error_Memory ();
+        (void)error_Memory (__FILE__, __LINE__, __func__);
     }
 }
 
